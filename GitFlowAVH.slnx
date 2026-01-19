@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="azure-pipelines.yml" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="GitFlowAVH.Tests/GitFlowAVH.Tests.csproj" Id="1ceb4b19-0d92-4887-9234-cc89acee7d0d" />
+  <Project Path="GitFlowAVH/GitFlowAVH.csproj" Id="9c9782b4-ae32-4df7-81ff-aefb73df6cd7" />
+</Solution>
