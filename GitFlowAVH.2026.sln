@@ -15,18 +15,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|2019 = Debug|2019
-		Release|2019 = Release|2019
+		Debug|2026 = Debug|2026
+		Release|2026 = Release|2026
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9C9782B4-AE32-4DF7-81FF-AEFB73DF6CD7}.Debug|2019.ActiveCfg = Debug|2019
-		{9C9782B4-AE32-4DF7-81FF-AEFB73DF6CD7}.Debug|2019.Build.0 = Debug|2019
-		{9C9782B4-AE32-4DF7-81FF-AEFB73DF6CD7}.Release|2019.ActiveCfg = Release|2019
-		{9C9782B4-AE32-4DF7-81FF-AEFB73DF6CD7}.Release|2019.Build.0 = Release|2019
-		{1CEB4B19-0D92-4887-9234-CC89ACEE7D0D}.Debug|2019.ActiveCfg = Debug|2019
-		{1CEB4B19-0D92-4887-9234-CC89ACEE7D0D}.Debug|2019.Build.0 = Debug|2019
-		{1CEB4B19-0D92-4887-9234-CC89ACEE7D0D}.Release|2019.ActiveCfg = Release|2019
-		{1CEB4B19-0D92-4887-9234-CC89ACEE7D0D}.Release|2019.Build.0 = Release|2019
+		{9C9782B4-AE32-4DF7-81FF-AEFB73DF6CD7}.Debug|2026.ActiveCfg = Debug|2026
+		{9C9782B4-AE32-4DF7-81FF-AEFB73DF6CD7}.Debug|2026.Build.0 = Debug|2026
+		{9C9782B4-AE32-4DF7-81FF-AEFB73DF6CD7}.Release|2026.ActiveCfg = Release|2026
+		{9C9782B4-AE32-4DF7-81FF-AEFB73DF6CD7}.Release|2026.Build.0 = Release|2026
+		{1CEB4B19-0D92-4887-9234-CC89ACEE7D0D}.Debug|2026.ActiveCfg = Debug|2026
+		{1CEB4B19-0D92-4887-9234-CC89ACEE7D0D}.Debug|2026.Build.0 = Debug|2026
+		{1CEB4B19-0D92-4887-9234-CC89ACEE7D0D}.Release|2026.ActiveCfg = Release|2026
+		{1CEB4B19-0D92-4887-9234-CC89ACEE7D0D}.Release|2026.Build.0 = Release|2026
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
