@@ -3,7 +3,9 @@ variables:
   MinorVersion: 1
   PatchVersion: 0
   
+  BuildPlatform: 'Any CPU'
   BuildConfiguration: 'Release'
+  DevEnvDir: 'C:\Program Files\Microsoft Visual Studio\18\Professional\Common7\IDE\'
 
 name: $(MajorVersion).$(MinorVersion).$(PatchVersion)$(Rev:.r)
 
@@ -13,18 +15,7 @@ trigger:
 jobs:
 - job: Build
 
-  strategy:
-    matrix:
-      2019:
-        BuildPlatform: '2019'
-        DevEnvDir: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\'
-      2022:
-        BuildPlatform: '2022'
-        DevEnvDir: 'C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\'
-    maxParallel: 2
-
-  pool:
-    vmImage: windows-$(BuildPlatform)
+  pool: ConquerorX Pipelines
 
   steps:
   
@@ -39,25 +30,26 @@ jobs:
     displayName: 'Update VSIX version'
     inputs:
       XmlWorkingDir: GitFlowAVH
-      XmlTargetFilters: '$(BuildPlatform)\source.extension.vsixmanifest'
+      XmlTargetFilters: 'source.extension.vsixmanifest'
       Namespaces: 'vsix => http://schemas.microsoft.com/developer/vsx-schema/2011'
       JsonPatchContent: '= /vsix:PackageManifest/vsix:Metadata/vsix:Identity/@Version=> "$(build.buildNumber)"'
       OutputPatchFile: true
       FailIfNoPatchApplied: true
   
   - task: VSBuild@1
-    displayName: 'Build solution GitFlowAVH.sln'
+    displayName: 'Build solution'
     inputs:
-      solution: GitFlowAVH.$(BuildPlatform).sln
+      solution: GitFlowAVH.slnx
       platform: '$(BuildPlatform)'
       configuration: '$(BuildConfiguration)'
       msbuildArgs: '-restore'
+      customVersion: '18.0'
   
   - task: CmdLine@1
     displayName: 'type files.json'
     inputs:
       filename: type
-      arguments: GitFlowAVH\obj\$(BuildPlatform)\Release\files.json
+      arguments: GitFlowAVH\obj\Release\files.json
   
   - task: VSTest@2
     displayName: 'VsTest - testAssemblies'
@@ -65,7 +57,6 @@ jobs:
       testAssemblyVer2: |
        **\$(BuildConfiguration)\*test*.dll
        !**\obj\**
-      platform: '$(BuildPlatform)'
       configuration: '$(BuildConfiguration)'
       testFiltercriteria: FullyQualifiedName~GitFlowWrapperTests
     enabled: false
@@ -75,7 +66,7 @@ jobs:
     inputs:
       SourceFolder: '$(system.defaultworkingdirectory)'
       Contents: |
-       **\bin\$(BuildPlatform)\$(BuildConfiguration)\*.vsix
+       **\bin\$(BuildConfiguration)\*.vsix
        README.md
        extension.manifest.json
       TargetFolder: '$(build.artifactstagingdirectory)'
@@ -93,4 +84,4 @@ jobs:
     displayName: 'Publish Artifact'
     inputs:
       PathtoPublish: '$(build.artifactstagingdirectory)'
-      ArtifactName: GitFlowAVH.VSIX.$(BuildPlatform)
+      ArtifactName: GitFlowAVH.VSIX
