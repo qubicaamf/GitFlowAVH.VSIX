@@ -17,9 +17,11 @@ jobs:
     matrix:
       2026:
         BuildPlatform: '2026'
+        MsbuildVersion: '18.0'
         DevEnvDir: 'C:\Program Files\Microsoft Visual Studio\18\Professional\Common7\IDE\'
       2022:
         BuildPlatform: '2022'
+        MsbuildVersion: '17.0'
         DevEnvDir: 'C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\'
     maxParallel: 2
 
@@ -51,6 +53,7 @@ jobs:
       platform: '$(BuildPlatform)'
       configuration: '$(BuildConfiguration)'
       msbuildArgs: '-restore'
+      customVersion: '$(MsbuildVersion)'
   
   - task: CmdLine@1
     displayName: 'type files.json'
