@@ -15,16 +15,15 @@ jobs:
 
   strategy:
     matrix:
-      2019:
-        BuildPlatform: '2019'
-        DevEnvDir: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\'
+      2026:
+        BuildPlatform: '2026'
+        DevEnvDir: 'C:\Program Files\Microsoft Visual Studio\18\Professional\Common7\IDE\'
       2022:
         BuildPlatform: '2022'
-        DevEnvDir: 'C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\'
+        DevEnvDir: 'C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\'
     maxParallel: 2
 
-  pool:
-    vmImage: windows-$(BuildPlatform)
+  pool: ConquerorX Pipelines
 
   steps:
   
