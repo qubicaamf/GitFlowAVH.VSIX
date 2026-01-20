@@ -91,16 +91,14 @@
     <PackageReference Include="Microsoft.ApplicationInsights">
       <Version>2.13.1</Version>
     </PackageReference>
-	<PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.0.31902.203" ExcludeAssets="runtime">
-	  <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	</PackageReference>
-	<PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.0.5232">
-	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	  <PrivateAssets>all</PrivateAssets>
-	</PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.14.40265" ExcludeAssets="runtime">
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.14.2120">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
-
-
   <ItemGroup>
     <Compile Include="BranchItem.cs" />
     <Compile Include="CommandOutputEventArgs.cs" />
@@ -190,18 +188,18 @@
   </ItemGroup>
   <Choose>
     <When Condition=" '$(Platform)' == '2026' ">
-	  <ItemGroup>
-		<None Include="2026\source.extension.vsixmanifest">
-			<SubType>Designer</SubType>
-		</None>
-	  </ItemGroup>
-	</When>
+      <ItemGroup>
+        <None Include="2026\source.extension.vsixmanifest">
+          <SubType>Designer</SubType>
+        </None>
+      </ItemGroup>
+    </When>
     <When Condition=" '$(Platform)' == '2022' ">
-	  <ItemGroup>
-		<None Include="2022\source.extension.vsixmanifest">
-			<SubType>Designer</SubType>
-		</None>
-	  </ItemGroup>
+      <ItemGroup>
+        <None Include="2022\source.extension.vsixmanifest">
+          <SubType>Designer</SubType>
+        </None>
+      </ItemGroup>
     </When>
   </Choose>
   <ItemGroup>
