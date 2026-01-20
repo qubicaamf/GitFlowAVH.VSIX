@@ -3,7 +3,7 @@
 	<Metadata>
 		<Identity Id="GitFlowAVH.057b0a0d-14ec-4f21-b6af-ca229284bbf3" Version="1.0" Language="en-US" Publisher="QubicaAMF" />
 		<DisplayName>GitFlow AVH 2026</DisplayName>
-		<Description xml:space="preserve">Integrates GitFlow AVH in Visual Studio 2022-2026</Description>
+		<Description xml:space="preserve">Integrates GitFlow AVH in Visual Studio 2026</Description>
 		<License>License.rtf</License>
 		<Icon>icon.jpg</Icon>
 		<PreviewImage>icon.jpg</PreviewImage>
